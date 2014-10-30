@@ -1,0 +1,53 @@
+Host rhea rhea.ics.hut.fi
+  HostName rhea.ics.hut.fi
+  User peter
+
+Host kosh kosh.org.aalto.fi
+  HostName kosh.org.aalto.fi
+  User psmit
+
+Host ics pc99 pc99.ics.hut.fi
+  HostName pc99.ics.hut.fi
+  User peter
+  ProxyCommand ssh rhea -W %h:%p
+
+Host video video.spa.hut.fi
+  HostName video.spa.hut.fi
+  User psmit
+
+Host spa t40511-da006.org.aalto.fi 
+  HostName t40511-da006.org.aalto.fi 
+  User psmit
+
+Host triton triton.aalto.fi
+  HostName triton.aalto.fi
+  User smitp1
+
+Host lava lava.elisa
+  HostName 192.168.0.10
+  User root
+  ProxyCommand ssh henk -W %h:%p
+
+Host baan baan.a55.nl
+  HostName baan.a55.nl
+  User peter
+
+Host henk home
+  HostName 10.11.12.38
+  User psmit
+  ProxyCommand ssh baan -W %h:%p
+
+Host jimi
+  HostName 10.11.12.50
+  User psmit
+  ProxyCommand ssh baan -W %h:%p
+
+Host simple4all
+  Hostname ecdfnas.ecdf.ed.ac.uk
+  Port 22222
+  User v1psmit
+
+Host *
+  ForwardAgent yes
+  ForwardX11 yes
+  ServerAliveInterval 15
